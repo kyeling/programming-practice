@@ -1,3 +1,5 @@
+// ITERATIVE APPROACH
+
 class Solution {
     public int maxDepth(TreeNode root) {
         Queue<TreeNode> q = new LinkedList<>();
