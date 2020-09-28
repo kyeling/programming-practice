@@ -1,3 +1,5 @@
+// RECURSIVE APPROACH
+
 int max(int (*a)(struct TreeNode*), int (*b)(struct TreeNode*)){
     if(*a > *b) return *a;
     return *b;
