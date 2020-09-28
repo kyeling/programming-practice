@@ -3,7 +3,7 @@ class Solution {
     public final String[] mapping = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
     
     public List<String> letterCombinations(String digits) {
-        List<string> ans = new ArrayList<>();
+        List<String> ans = new ArrayList<>();
         if(digits == null || digits.length() == 0) return ans;
         dfs(ans, digits, 0, "");
         return ans;
@@ -18,7 +18,7 @@ class Solution {
         int num = digits.charAt(index) - '0';
         String letters = mapping[num];
         for(char c : letters.toCharArray()){
-            dfs(ans, digits, index + 1, combination + c)
+            dfs(ans, digits, index + 1, combination + c);
         }
     }
 }
