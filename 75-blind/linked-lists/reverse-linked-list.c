@@ -13,7 +13,9 @@ struct ListNode* reverseList(struct ListNode* head){
     return revHead;
 }
 
+
 // recursive solution: time and space O(n)
+
 struct ListNode* reverseList(struct ListNode* head){
     if(head == NULL || head->next == NULL) return head;
     struct ListNode* curr = reverseList(head->next);
