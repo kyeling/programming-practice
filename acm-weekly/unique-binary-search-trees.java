@@ -7,6 +7,7 @@ class Solution {
         for(int i = 2; i <= n; i++){
             // add every possible parent's unique combinations
             for(int j = 0; j < i; j++){
+                // ex: f(3) = f(0)*f(2) + f(1)*f(1) + f(2)*f(0)
                 f[i] += f[j] * f[i-j-1];
             }
         }
