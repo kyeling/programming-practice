@@ -27,7 +27,7 @@ class Solution:
     
 # Jaden's solution
 # can also use stack and pop
-# time O(V+E) or O(2n) if recursive, but O(n) otherwise, where n is number of nodes
+# time O(V+E) whether recrusive or iterative
 # space O(V+E) 
 from collections import deque
 class Solution:
