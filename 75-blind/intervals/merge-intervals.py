@@ -1,4 +1,6 @@
 # most common interval problem
+# time O(nlogn+n) = O(nlogn) - dominated by sorting
+# space O(n) - worst case, no merge so list of original n elements
 
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
