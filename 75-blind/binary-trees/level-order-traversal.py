@@ -23,7 +23,8 @@ class Solution:
             level.clear()
         
         return levels
-    
+  
+
     
 # Jaden's solution
 # can also use stack and pop
@@ -54,3 +55,17 @@ class Solution:
                     
             nodes.append(levelnodes)
         return nodes
+
+    
+    
+# wd's solution - condensed
+class Solution:
+    def levelOrder(self, root: TreeNode) -> List[List[int]]:
+        if not root: return []
+        
+        ret=[]
+        q=[root]
+        while q:
+            ret.append([n.val for n in q])
+            q=[c for n in q for c in [n.left,n.right] if c]
+        return ret
