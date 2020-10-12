@@ -3,6 +3,10 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+
+# merge one list at a time
+# time O(kn) where k = number of lists, n = max elements in list
+# space O(1) bc modify in place
 class Solution:
     def mergeKLists(self, lists: List[ListNode]) -> ListNode:
         if len(lists) == 0: return None
@@ -39,3 +43,18 @@ class Solution:
         if l2: prev.next = l2
         
         return head
+    
+    
+# divide and conque merge (merge in pairs, then merge in pairs again, etc)
+# time O(n logk) where k = is number of lists, n = max number of elements in list
+# space O(1) bc merge in place
+class Solution:
+    def mergeKLists(self, lists: List[ListNode]) -> ListNode:
+        n = len(lists)
+        if n == 0: return None
+        interval = 1
+        while interval < n:
+            for i in range(0, n - interval, interval * 2):
+                lists[i] = self.mergeTwoLists(lists[i], lists[i+interval])
+            interval *= 2
+        return lists[0]
