@@ -5,12 +5,8 @@ class Solution:
         
         result = []
         current_num = 1
-        while current_num > 0:
-            if current_num in result: 
-                break
-            else:
-                result.append(current_num)
-            
+        for _ in range(n):
+            result.append(current_num)
             if current_num * 10 <= n:
                 # go down one level
                 current_num = current_num * 10
